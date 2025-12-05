@@ -1,8 +1,14 @@
 name: 06 - Contexts
+run-name: 06 - Context | DEBUG - ${{ inputs.debug }} # <--- Fixed
 
 on:
   push:
   workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        description: "Set to true to enable debug logging."
+        default: false
 
 jobs:
   echo-data:
